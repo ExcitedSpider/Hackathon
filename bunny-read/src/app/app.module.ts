@@ -17,6 +17,7 @@ import { CommentComponent } from './comment/comment.component';
 import { CommentItemComponent } from './comment-item/comment-item.component'
 
 import { MatCardModule } from '@angular/material/card';
+import { LoginWindowComponent } from './login-window/login-window.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatCardModule } from '@angular/material/card';
     MarkedContentComponent,
     SettingsComponent,
     CommentComponent,
-    CommentItemComponent
+    CommentItemComponent,
+    LoginWindowComponent
   ],
   imports: [
     BrowserModule,

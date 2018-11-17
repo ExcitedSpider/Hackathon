@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { EventEmitter } from '@angular/core';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -37,7 +38,11 @@ export class ContentGetJsonService {
     private http: HttpClient
   ) { }
 
+  emitter = new EventEmitter();
+
+
   sendMessage(urlKeyword: URLKEYWORDInterface): Observable<MessageInterface>{
+    this.emitter.emit(urlKeyword.url);
     return this.http.post<MessageInterface>(this.messUrl, urlKeyword, httpOptions);
   }
   

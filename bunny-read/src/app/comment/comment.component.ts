@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommentModel } from './comment.model';
 import { HttpClient } from '@angular/common/http'
+import { RouterModule, Routes, ActivatedRoute } from '@angular/router'
+import { ContentGetJsonService } from '../content-get-json.service'
 
 
 interface Res{
@@ -16,23 +18,35 @@ interface Res{
 export class CommentComponent implements OnInit {
 
   model:CommentModel = new CommentModel("游客","","");
+  url:string = "http://github.io";
 
   comments:CommentModel[]=[];
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient,
+  private route:ActivatedRoute,private service:ContentGetJsonService) { 
     this.http = http;
   }
 
   ngOnInit() {
-    this.http.post<Res>("http://localhost:8088/showComment",{url:'myurl'}).subscribe((data=>{
+    this.http.post<Res>("http://localhost:8088/showComment",{url:this.url}).subscribe((data=>{
       console.log(data);
       this.comments = data.comments;
     }));
+    this.service.emitter.subscribe((url:string)=>{
+      console.log(url);
+      this.url = url;
+    })
+
+  }
+
+  getURL(): void {
+    const url = this.route.snapshot.paramMap.get('url');
+    this.url = url;
   }
 
   submit(){
     console.log(this.model);
     this.model.datetime = this.getNowFormatDate();
-    this.model.url = "myurl";
+    this.model.url = this.url;
     this.http.post<Res>("http://localhost:8088/addComment",this.model).subscribe((data=>{
       console.log(data);
       this.comments = data.comments;

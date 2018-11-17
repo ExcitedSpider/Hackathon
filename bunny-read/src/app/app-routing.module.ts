@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'content', component:  ContentComponent },
   { path: 'marked-content/:anchor', component: MarkedContentComponent },
   { path: 'settings', component: SettingsComponent },
-  { path: 'comment',component:CommentComponent}
+  { path: 'comment', component:CommentComponent }
 ];
 
 @NgModule({
