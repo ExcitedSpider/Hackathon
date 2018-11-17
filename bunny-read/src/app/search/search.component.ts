@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../card';
+import { settings } from '../global'
 import { globalCards, html, setHtml } from '../global'
 import { MessageInterface, URLKEYWORDInterface } from '../content-get-json.service'
 import { HttpClient } from 'selenium-webdriver/http';
@@ -21,9 +22,22 @@ export class SearchComponent implements OnInit {
   ngOnInit() { }
 
   commitUrl() {
+    var keywords = settings.filter(s=>{
+      return s.selected;
+    }).map(s=>{
+      return s.name;
+    })
+    var r = keywords.map(s=>{
+      return s;
+    })
+    console.log(keywords)
     this.contentGetJsonService.sendMessage({
         "url": this.url,
-        "keyWords": ["删除", "隐私"]
+        "keyWords": settings.filter(s=>{
+          return s.selected;
+        }).map(s=>{
+          return s.name;
+        })
     }).subscribe(data => {
         this.mess=data;
         console.log(this.mess);
