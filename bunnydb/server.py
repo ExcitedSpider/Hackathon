@@ -3,9 +3,9 @@ from flask import Flask, request, session,make_response
 import json
 import handle
 import time
-
+from flask_cors import *
 app = Flask(__name__)
-
+CORS(app,resources=r'/*')
 @app.route('/login',methods= ['POST','GET'])
 def Login():
     response = None

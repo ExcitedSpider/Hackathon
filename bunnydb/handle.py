@@ -17,7 +17,7 @@ def login(data):
 
 def addComment(data):
     # args = [data["name"],data["url"],data["comment"], time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())]
-    args = [data["name"], data["url"], data["comment"], time.strftime("%Y-%m-%d %H:%M:%S", data["time"])]
+    args = [data["name"], data["url"], data["comment"], time.strftime("%Y-%m-%d %H:%M:%S", data["datetime"])]
     url = {"url": data["url"]}
     # print(args)
     db = testdb.database()
