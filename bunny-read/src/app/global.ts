@@ -11,5 +11,8 @@ var settings: SettingItem[] = [
 
 var cards: Card[] = [];
 
-var html: string = "";
-export  { settings, cards, html };
+var html: string;
+function setHtml(h) {
+    html = h;
+}
+export  { settings, cards, html, setHtml };

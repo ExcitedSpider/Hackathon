@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../card';
-import { cards } from '../global'
+import { cards, html, setHtml } from '../global'
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -12,14 +12,13 @@ export class SearchComponent implements OnInit {
   commitUrl() {
     // TODO: 与后端通信
     // 这里直接模拟返回值
-    // cards.length = 0;
+    cards.length = 0;
     for(let _card of this.mock.cards) {
-      // console.log(_card)
       for(let _token of _card.tokens) {
         cards.push(new Card(_card.keyword, _token.id, _token.sentence));
       }
+      setHtml(this.mock.html);
     }
-    console.log(cards)
   }
   constructor() { }
 
