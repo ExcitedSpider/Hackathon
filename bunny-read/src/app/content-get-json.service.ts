@@ -2,14 +2,24 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-export interface Card{
-  keyword: string;
-  tokens: string[];
+export interface TokenInterface{
+  id: string;
+  sentence: string;
 }
 
-export interface Message{
-  cards: Card[];
+export interface CardInterface{
+  keyword: string;
+  tokens: TokenInterface[];
+}
+
+export interface MessageInterface{
+  cards: CardInterface[];
   html: string;
+}
+
+export interface URLKEYWORDInterface{
+  url: string;
+  keywords: string[];
 }
 
 @Injectable({
@@ -23,7 +33,8 @@ export class ContentGetJsonService {
     private http: HttpClient
   ) { }
 
-  getMessage(): Observable<Message>{
-    return this.http.get<Message>(this.messUrl);
+  getMessage(): Observable<MessageInterface>{
+    return this.http.get<MessageInterface>(this.messUrl);
   }
+
 }
