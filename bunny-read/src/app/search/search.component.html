@@ -1,8 +1,11 @@
 <form class="col s12">
 <div class="row">
   <div class="input-field col s12">
-    <input id="email" type="email" class="validate">
-    <label for="email">请输入url...</label>
+      <i class="material-icons prefix">mode_edit</i>
+    <input [(ngModel)]="url" [ngModelOptions]="{standalone: true}" (keyup.enter)="commitUrl()" id="url-input" type="text" class="validate">
+    
+    <label for="url-input">请输入url...</label>
+   
   </div>
 </div>
 </form>

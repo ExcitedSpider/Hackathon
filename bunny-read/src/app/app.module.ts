@@ -9,6 +9,7 @@ import { ContentComponent } from './content/content.component';
 import { CardComponent } from './card/card.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MarkedContentComponent } from './marked-content/marked-content.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MarkedContentComponent } from './marked-content/marked-content.componen
     SearchComponent,
     ContentComponent,
     CardComponent,
-    MarkedContentComponent
+    MarkedContentComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
