@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FloatingActionButton } from 'materialize-css'
+import {  } from 'materialize-css'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,9 +8,6 @@ import { FloatingActionButton } from 'materialize-css'
 export class AppComponent {
   title = 'bunny-read';
   ngOnInit() {
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.fixed-action-btn');
-      FloatingActionButton.init(elems);
-    });
+  
   }
 }

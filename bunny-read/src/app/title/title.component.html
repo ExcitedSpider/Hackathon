@@ -1,8 +1,11 @@
-<nav>
-  <div class="nav-wrapper">
-      
+<div class="navbar-fixed">
+<nav class='deep-purple'>
+  <div class="nav-wrapper container ">
+    <ul *ngIf="this.location.path() != '/content'"class="left"><a  (click)="goBack()" id="arrow-back"> <i  class="large material-icons" >arrow_back</i></a></ul>
     <a routerLink="/" class="brand-logo center">Bunny Read</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
+      
+       
       <li><a routerLink="/settings">设置</a></li>
       <li *ngIf="!isLoggedIn"><a routerLink="/login">登录</a></li>
       <li *ngIf="isLoggedIn"><a>登出</a></li>
@@ -10,7 +13,7 @@
     <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
   </div>
 </nav>
-
+</div>
 <ul class="sidenav" id="mobile-demo">
     <li><a routerLink="/settings">设置</a></li>
     <li *ngIf="!isLoggedIn"><a routerLink="/login">登录</a></li>
