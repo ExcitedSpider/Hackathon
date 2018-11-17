@@ -9,7 +9,7 @@ import { SettingsComponent } from './settings/settings.component';
 const routes: Routes = [
   { path: '', redirectTo: '/content', pathMatch: 'full' },
   { path: 'content', component:  ContentComponent },
-  { path: 'marked-content/:anchor', component: MarkedContentComponent },
+  { path: 'marked-content', component: MarkedContentComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'comment',component:CommentComponent}
 ];
