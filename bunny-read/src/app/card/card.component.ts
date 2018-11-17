@@ -10,6 +10,7 @@ import { Card } from '../card';
 })
 export class CardComponent implements OnInit {
   @Input() card: Card;
+  @Input() color: string;
 
   constructor(private route: ActivatedRoute,
     private location: Location) { }
