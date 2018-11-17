@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { html } from '../global'
 @Component({
   selector: 'app-marked-content',
   templateUrl: './marked-content.component.html',
@@ -8,6 +9,7 @@ import { Location } from '@angular/common';
 })
 export class MarkedContentComponent implements OnInit {
   url: string
+  innerHtml: string = html
 
   goBack(): void {
     this.location.back();
@@ -17,7 +19,11 @@ export class MarkedContentComponent implements OnInit {
     private location: Location) { }
 
   ngOnInit() {
-    this.url = this.location.path();
+    document.getElementById('inner').innerHTML = this.innerHtml;
+    document.getElementById(this.route.snapshot.paramMap.get('anchor')).scrollIntoView();
+
+    console.log(this.route.snapshot.paramMap.get('anchor'));
+    // this.location.go(this.location.path()+"#"+this.route.snapshot.paramMap.get('anchor'))
   }
 
 }

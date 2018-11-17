@@ -5,6 +5,8 @@ import { TokenInterface, CardInterface, MessageInterface, URLKEYWORDInterface } 
 import { HttpClient } from 'selenium-webdriver/http';
 import { ContentComponent } from '../content/content.component';
 import { ContentGetJsonService } from '../content-get-json.service';
+
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
