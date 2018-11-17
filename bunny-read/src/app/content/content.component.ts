@@ -11,6 +11,12 @@ export class ContentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.getKeyWordName();
+    //this.cardsName = ["隐私", "费用", "生活", "充值", "账户", "周期", "情感"]
   }
 
+  getKeyWordName(): void {
+    //this.contentGetJsonService.getMessage()
+    //.subscribe(message => this.keyword = message.cards[0].keyword);
+  }
 }

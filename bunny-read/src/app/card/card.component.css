@@ -1,0 +1,12 @@
+.card{
+    max-width: 255px;
+}
+
+.cardTitle{
+    font: 1em sans-serif;
+    font-size: large;
+}
+
+.cardContent{
+    font-size: smaller;
+}

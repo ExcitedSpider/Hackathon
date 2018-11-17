@@ -6,7 +6,7 @@ import { MarkedContentComponent } from './marked-content/marked-content.componen
 import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/content', pathMatch: 'full' },
+//  { path: '', redirectTo: '/content', pathMatch: 'full' },
   { path: 'content', component:  ContentComponent },
   { path: 'marked-content', component: MarkedContentComponent },
   { path: 'settings', component: SettingsComponent }
