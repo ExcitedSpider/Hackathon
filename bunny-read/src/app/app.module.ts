@@ -33,10 +33,7 @@ import { MatCardModule } from '@angular/material/card';
     FormsModule,
     AppRoutingModule,
     MatCardModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

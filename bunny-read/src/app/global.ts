@@ -9,10 +9,10 @@ var settings: SettingItem[] = [
     new SettingItem("deletion", "删除"),
   ];
 
-var cards: Card[] = [];
+var globalCards: Card[] = [];
 
 var html: string;
 function setHtml(h) {
     html = h;
 }
-export  { settings, cards, html, setHtml };
+export  { settings, globalCards, html, setHtml };
