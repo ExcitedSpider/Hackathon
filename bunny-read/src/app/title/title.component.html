@@ -4,7 +4,7 @@
     <a routerLink="/" class="brand-logo center">Bunny Read</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a routerLink="/settings">设置</a></li>
-      <li *ngIf="!isLoggedIn"><a>登录</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="/login">登录</a></li>
       <li *ngIf="isLoggedIn"><a>登出</a></li>
     </ul>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
@@ -12,7 +12,7 @@
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-    <li><a>设置</a></li>
-    <li *ngIf="!isLoggedIn"><a>登录</a></li>
+    <li><a routerLink="/settings">设置</a></li>
+    <li *ngIf="!isLoggedIn"><a routerLink="/login">登录</a></li>
     <li *ngIf="isLoggedIn"><a>登出</a></li>
 </ul>
