@@ -1,19 +1,18 @@
-<<<<<<< Updated upstream
-
 <app-search></app-search>
 <div class="row">
-    <div *ngFor="let card of cards">
-        <app-card [card]="card"></app-card>
-      </div>
-</div>
-=======
-<div *ngIf="cardsName.length">
-  <div *ngFor="let cName of cardsName" class="content-item">
-    <app-card [cardName]="cName" 
-    routerLink="/marked-content" routerLinkActive="active"></app-card>
+  <div class="col l4 s12">
+    <div *ngFor="let card of cards; let i = index">
+      <app-card *ngIf="i%3 == 0" [card]="card"></app-card>
+    </div>
   </div>
-  <div *ngIf="keyword">
-    <app-card [cardName]="keyword"></app-card>
+  <div class="col l4 s12">
+    <div *ngFor="let card of cards; let i = index">
+      <app-card *ngIf="i%3 == 1" [card]="card"></app-card>
+    </div>
+  </div>
+  <div class="col l4 s12">
+    <div *ngFor="let card of cards; let i = index">
+      <app-card *ngIf="i%3 == 2" [card]="card"></app-card>
+    </div>
   </div>
 </div>
->>>>>>> Stashed changes

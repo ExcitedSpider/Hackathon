@@ -13,7 +13,6 @@ export class SearchComponent implements OnInit {
     // TODO: 与后端通信
     // 这里直接模拟返回值
     // cards.length = 0;
-    console.log(1);
     for(let _card of this.mock.cards) {
       // console.log(_card)
       for(let _token of _card.tokens) {
