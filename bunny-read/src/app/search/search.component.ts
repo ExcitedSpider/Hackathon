@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../card';
-import { cards } from '../global'
+import { cards, html, setHtml } from '../global'
 import { TokenInterface, CardInterface, MessageInterface, URLKEYWORDInterface } from '../content-get-json.service'
 import { HttpClient } from 'selenium-webdriver/http';
 import { ContentComponent } from '../content/content.component';
@@ -29,6 +29,7 @@ export class SearchComponent implements OnInit {
       for(let _token of _card.tokens) {
         cards.push(new Card(_card.keyword, _token.id, _token.sentence));
       }
+      setHtml(this.mess.html);
     }
   }
 }
