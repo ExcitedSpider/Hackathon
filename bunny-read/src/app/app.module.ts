@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MarkedContentComponent } from './marked-content/marked-content.component';
 import { SettingsComponent } from './settings/settings.component';
 import { CommentComponent } from './comment/comment.component';
+import { CommentItemComponent } from './comment-item/comment-item.component'
 
 import { MatCardModule } from '@angular/material/card';
 
@@ -26,7 +27,8 @@ import { MatCardModule } from '@angular/material/card';
     CardComponent,
     MarkedContentComponent,
     SettingsComponent,
-    CommentComponent
+    CommentComponent,
+    CommentItemComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,13 @@ export class ContentComponent implements OnInit {
     this.contentGetJsonService = contentGetJsonService;
    }
 
+  colors: string[] = ["pink",
+    "deep-purple","indigo","blue","cyan","teal","green","deep-orange","brown","blue-grey"
+  ];
+  getColor(i) {
+    return this.colors[i%9];
+  }
+
   ngOnInit() {
 
   }

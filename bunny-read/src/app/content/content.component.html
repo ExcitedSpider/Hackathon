@@ -2,17 +2,17 @@
 <div class="row">
   <div class="col l4 s12">
     <div *ngFor="let card of cards; let i = index">
-      <app-card *ngIf="i%3 == 0" [card]="card"></app-card>
+      <app-card *ngIf="i%3 == 0" [card]="card" [color]="getColor(i)"></app-card>
     </div>
   </div>
   <div class="col l4 s12">
     <div *ngFor="let card of cards; let i = index">
-      <app-card *ngIf="i%3 == 1" [card]="card"></app-card>
+      <app-card *ngIf="i%3 == 1" [card]="card" [color]="getColor(i)"></app-card>
     </div>
   </div>
   <div class="col l4 s12">
     <div *ngFor="let card of cards; let i = index">
-      <app-card *ngIf="i%3 == 2" [card]="card"></app-card>
+      <app-card *ngIf="i%3 == 2" [card]="card" [color]="getColor(i)"></app-card>
     </div>
   </div>
 </div>
