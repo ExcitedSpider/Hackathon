@@ -28,14 +28,12 @@ def Login():
 @app.route('/addComment',methods=['POST','GET'])
 def addComment():
     response = None
-    if 'user' in session:
-        if request.method == 'POST':
-            content = request.data
-            data = json.loads(content)
-            res = handle.addComment(data)
-            response = make_response(res)
-    else:
-        response = make_response("please login first",404)
+    if request.method == 'POST':
+        content = request.data
+        data = json.loads(content)
+        res = handle.addComment(data)
+        response = make_response(res)
+    response = make_response("please login first",404)
     return response
 
 @app.route('/showComment',methods=['POST','GET'])
@@ -52,5 +50,5 @@ def showComment():
 
 if __name__ == "__main__":
     app.secret_key = '12345678'
-    app.run(port=8080)
+    app.run(port=8088)
 
