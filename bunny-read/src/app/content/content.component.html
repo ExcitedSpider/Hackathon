@@ -1,5 +1,19 @@
 <app-search></app-search>
-<div class="row">
+<div *ngIf="cards.length==0" class="col s12 m7">
+    <h2 class="header">让我们开始吧</h2>
+    <div class="card horizontal">
+
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>在输入框中输入协议链接，让我们看看其中的猫腻</p>
+        </div>
+        <div class="card-action">
+          <a href="javascript:void(0)" (click)="tryThis()" style="color:#673ab7">试试这个链接</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<div *ngIf="cards.length!=0" class="row">
   <div class="col l4 s12">
     <div *ngFor="let card of cards; let i = index">
       <app-card *ngIf="i%3 == 0" [card]="card" [color]="getColor(i)"></app-card>

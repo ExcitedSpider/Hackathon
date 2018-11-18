@@ -1,0 +1,28 @@
+.container {
+    margin-top: 60px;
+}
+
+#logo {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    max-width: 200px;
+}
+
+@media screen and (max-width: 1000px) {
+    #logo {
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #logo {
+        max-width: 150px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #logo {
+        max-width: 100px;
+    }
+}

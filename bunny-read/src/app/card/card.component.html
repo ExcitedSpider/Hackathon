@@ -1,9 +1,9 @@
-<div class="card darken-1" [ngClass]="color">
-  <div class="card-content white-text">
-    <span class="card-title">{{card.keyword}}</span>
-    <p>{{card.sentence}}</p>
+<div class="card darken-1" [ngClass]="color" routerLink="/marked-content/{{card.id}}">
+    <div class="card-content white-text">
+      <span class="card-title">{{card.keyword}}</span>
+      <p>{{card.sentence}}</p>
+    </div>
+    <!-- <div class="card-action"> -->
+      <!-- <a routerLink="/marked-content/{{card.id}}">Details</a> -->
+    <!-- </div> -->
   </div>
-  <div class="card-action">
-    <a routerLink="/marked-content/{{card.id}}">Details</a>
-  </div>
-</div>

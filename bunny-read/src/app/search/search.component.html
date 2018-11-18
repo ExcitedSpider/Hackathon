@@ -2,8 +2,8 @@
 <div class="row">
   <div class="input-field col s12">
       <i class="material-icons prefix">mode_edit</i>
-    <input [(ngModel)]="url" [ngModelOptions]="{standalone: true}" (keyup.enter)="commitUrl()" id="url-input" type="text" class="validate">
-    <label for="url-input">请输入url...</label>
+    <input placeholder="让我们看看其中的猫腻吧！"  [(ngModel)]="url" [ngModelOptions]="{standalone: true}" (keyup.enter)="commitUrl()" id="url-input" type="text" class="validate">
+    <label class="active" for="url-input">请输入链接...</label>
   </div>
 </div>
 </form>

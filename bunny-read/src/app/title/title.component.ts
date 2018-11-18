@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Sidenav } from 'materialize-css'
 import { SettingItem } from '../settings/setting-item'
+import { EmitService } from '../emit.service'
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-title',
@@ -14,11 +16,16 @@ export class TitleComponent implements OnInit {
   password: string;
   isLoggedIn: boolean = false;
 
-  constructor() { }
+
+  constructor( private location: Location, private emitService: EmitService) { }
+  goBack(): void {
+    this.location.back();
+  }
 
   ngOnInit() {
     var elems = document.querySelectorAll('.sidenav');
     Sidenav.init(elems);
+   
   }
 
 }

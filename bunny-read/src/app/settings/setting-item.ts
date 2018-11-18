@@ -1,5 +1,3 @@
 export class SettingItem {
-    selected: boolean = false
-
-    constructor(public value:string, public name: string) {}
+    constructor(public value:string, public name: string, public selected: boolean=false) {}
 }

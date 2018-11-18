@@ -1,5 +1,20 @@
-<li>
-  <!-- <mat-form-field>
-    <input matInput [(ngModel)]="userName" placeholder="Please input user name">
-  </mat-form-field> -->
-</li>
+<div style="padding-top: 100px">
+    <div class="row">
+        <div class="input-field col s6 offset-s3">
+          <input [(ngModel)]="username" [ngModelOptions]="{standalone: true}" (keyup.enter)="login()" id="username" type="text" class="validate">
+          <label for="username">用户名...</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6 offset-s3" >
+          <input [(ngModel)]="password" [ngModelOptions]="{standalone: true}" (keyup.enter)="login()" id="password" type="password" class="validate">
+          <label for="password">密码...</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6 offset-s3 ">
+            <a (click)="login()"  class="waves-effect waves-light btn btn-large purple right">登录</a>
+            </div>
+      </div>
+</div>
+

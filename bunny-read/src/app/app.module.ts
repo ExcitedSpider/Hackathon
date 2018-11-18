@@ -14,9 +14,6 @@ import { SettingsComponent } from './settings/settings.component';
 import { CommentComponent } from './comment/comment.component';
 import { CommentItemComponent } from './comment-item/comment-item.component'
 
-import { MatCardModule } from '@angular/material/card';
-import { LoginWindowComponent } from './login-window/login-window.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,14 +24,12 @@ import { LoginWindowComponent } from './login-window/login-window.component';
     MarkedContentComponent,
     SettingsComponent,
     CommentComponent,
-    CommentItemComponent,
-    LoginWindowComponent
+    CommentItemComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    MatCardModule,
     HttpClientModule
   ],
   providers: [],
