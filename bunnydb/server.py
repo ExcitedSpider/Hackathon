@@ -33,7 +33,7 @@ def addComment():
         data = json.loads(content)
         res = handle.addComment(data)
         response = make_response(res)
-    response = make_response("please login first",404)
+    # response = make_response("please login first",404)
     return response
 
 @app.route('/showComment',methods=['POST','GET'])

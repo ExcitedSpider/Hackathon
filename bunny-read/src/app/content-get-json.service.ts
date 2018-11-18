@@ -39,10 +39,10 @@ export class ContentGetJsonService {
   ) { }
 
   emitter = new EventEmitter();
-
+  url:string="";
 
   sendMessage(urlKeyword: URLKEYWORDInterface): Observable<MessageInterface>{
-    this.emitter.emit(urlKeyword.url);
+    this.url = urlKeyword.url;
     return this.http.post<MessageInterface>(this.messUrl, urlKeyword, httpOptions);
   }
   

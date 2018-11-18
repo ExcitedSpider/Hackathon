@@ -18,24 +18,29 @@ interface Res{
 export class CommentComponent implements OnInit {
 
   model:CommentModel = new CommentModel("游客","","");
-  url:string = "http://github.io";
+  url:string = "http://whhhhatevver.io";
+ // urlisvalid:boolean = false;
 
   comments:CommentModel[]=[];
   constructor(private http:HttpClient,
   private route:ActivatedRoute,private service:ContentGetJsonService) { 
     this.http = http;
+    this.service = service;
   }
 
   ngOnInit() {
-    this.http.post<Res>("http://localhost:8088/showComment",{url:this.url}).subscribe((data=>{
-      console.log(data);
-      this.comments = data.comments;
-    }));
-    this.service.emitter.subscribe((url:string)=>{
-      console.log(url);
-      this.url = url;
-    })
-
+    this.url = this.service.url;
+    console.log("url:"+this.url);
+    
+    if(this.url!=""){
+   //   this.urlisvalid = true;
+      console.log(this.url);
+      this.http.post<Res>("http://localhost:8088/showComment",{url:this.url}).subscribe((data=>{
+        console.log(data);
+        this.comments = data.comments;
+      }));
+    }
+  //  this.urlisvalid = false;
   }
 
   getURL(): void {
